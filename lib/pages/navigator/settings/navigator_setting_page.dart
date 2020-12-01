@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -36,7 +34,7 @@ class NavSettingPage extends StatelessWidget {
             RadioListTile(
               value: NavHeadType.dailyPic,
               groupValue: globalModel.currentNavHeader,
-              subtitle: CustomCacheImage(url: NavHeadType.DAILY_PIC_URL,cacheManager: CustomCacheManager(),),
+              subtitle: CustomCacheImage(url: NavHeadType.DAILY_PIC_URL,cacheManager: CustomCacheManager.instance,),
               onChanged: (value) => onChanged(globalModel, value),
               title: Text(IntlLocalizations.of(context).dailyPic),
             ),

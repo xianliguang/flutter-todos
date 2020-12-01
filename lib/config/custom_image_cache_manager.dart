@@ -1,36 +1,20 @@
 
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:http/http.dart' as http;
-import 'package:path/path.dart' as p;
+import 'package:flutter_cache_manager/src/storage/file_system/file_system_io.dart';
 
 
 
 //图片缓存管理类，目前没有用到
-class CustomCacheManager extends BaseCacheManager {
-  static const key = "customCache";
-
-  static CustomCacheManager _instance;
-
-  factory CustomCacheManager() {
-    if (_instance == null) {
-      _instance = new CustomCacheManager._();
-    }
-    return _instance;
-  }
-
-  CustomCacheManager._() : super(key,
-      maxAgeCacheObject: Duration(hours: 12),
-      maxNrOfCacheObjects: 1,
-      fileFetcher: _customHttpGetter);
-
-  Future<String> getFilePath() async {
-    var directory = await getTemporaryDirectory();
-    return p.join(directory.path, key);
-  }
-
-  static Future<FileFetcherResponse> _customHttpGetter(String url, {Map<String, String> headers}) async {
-    // Do things with headers, the url or whatever.
-    return HttpFileFetcherResponse(await http.get(url, headers: headers));
-  }
+class CustomCacheManager {
+  static const key = 'customCacheKey';
+  static CacheManager instance = CacheManager(
+    Config(
+      key,
+      stalePeriod: const Duration(days: 7),
+      maxNrOfCacheObjects: 20,
+      repo: JsonCacheInfoRepository(databaseName: key),
+      fileSystem: IOFileSystem(key),
+      fileService: HttpFileService(),
+    ),
+  );
 }

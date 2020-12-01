@@ -80,7 +80,7 @@ class _ImagePageState extends State<ImagePage> {
                 return PhotoViewGalleryPageOptions(
                   imageProvider: CachedNetworkImageProvider(url,
                       cacheManager: url == NavHeadType.DAILY_PIC_URL
-                          ? CustomCacheManager()
+                          ? CustomCacheManager.instance
                           : null),
                   initialScale: PhotoViewComputedScale.contained,
                   heroTag: widget.heroTag ?? "tag_$index",
@@ -109,6 +109,6 @@ class _ImagePageState extends State<ImagePage> {
 
     return CachedNetworkImageProvider(url,
         cacheManager:
-            url == NavHeadType.DAILY_PIC_URL ? CustomCacheManager() : null);
+            url == NavHeadType.DAILY_PIC_URL ? CustomCacheManager.instance : null);
   }
 }

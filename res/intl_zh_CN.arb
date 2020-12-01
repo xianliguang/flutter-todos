@@ -1,6 +1,6 @@
 {
   "@@last_modified": "2019-06-28T15:08:05.980030",
-  "appName": "一日清单",
+  "appName": "每日清单",
   "@appName": {
     "description": "app的名字",
     "type": "text",

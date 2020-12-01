@@ -6,7 +6,7 @@ import 'package:todo_list/utils/shared_util.dart';
 
 class LanguagePage extends StatelessWidget {
   final List<LanguageData> languageDatas = [
-    LanguageData("中文", "zh", "CN", "一日"),
+    LanguageData("中文", "zh", "CN", "每日"),
     LanguageData("English", "en", "US", "One Day"),
   ];
 

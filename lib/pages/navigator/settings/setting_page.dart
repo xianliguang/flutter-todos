@@ -223,18 +223,18 @@ ListView buildSettingListView(BuildContext context, GlobalModel globalModel) {
           }));
         },
       ),
-      ListTile(
-        title: Text(IntlLocalizations.of(context).aboutApp),
-        leading: Icon(
-          Icons.info_outline,
-        ),
-        trailing: Icon(Icons.keyboard_arrow_right),
-        onTap: () {
-          Navigator.of(context).push(CupertinoPageRoute(builder: (ctx) {
-            return AboutPage();
-          }));
-        },
-      ),
+//      ListTile(
+//        title: Text(IntlLocalizations.of(context).aboutApp),
+//        leading: Icon(
+//          Icons.info_outline,
+//        ),
+//        trailing: Icon(Icons.keyboard_arrow_right),
+//        onTap: () {
+//          Navigator.of(context).push(CupertinoPageRoute(builder: (ctx) {
+//            return AboutPage();
+//          }));
+//        },
+//      ),
     ],
   );
 }

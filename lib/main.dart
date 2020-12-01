@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         DemoLocalizationsDelegate()
       ],
       supportedLocales: [
-        const Locale('en', 'US'), // 美国英语
+//        const Locale('en', 'US'), // 美国英语
         const Locale('zh', 'CN'), // 中文简体
       ],
       localeResolutionCallback:
@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
       },
       locale: model.currentLocale,
       theme: ThemeUtil.getInstance().getTheme(model.currentThemeBean),
-      home: getHomePage(model.goToLogin, model.enableSplashAnimation),
+      home: getHomePage(false, model.enableSplashAnimation),
     );
   }
 
@@ -72,6 +72,7 @@ class MyApp extends StatelessWidget {
     if(enableSplashAnimation) return new SplashPage();
     return goToLogin ? ProviderConfig.getInstance().getLoginPage(isFirst: true)
         : ProviderConfig.getInstance().getMainPage();
+
   }
 
 }

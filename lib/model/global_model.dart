@@ -19,7 +19,7 @@ class GlobalModel extends ChangeNotifier {
   TaskDetailPageModel taskDetailPageModel;
 
   ///app的名字
-  String appName = '一日';
+  String appName = '每日清单';
 
   ///当前的主题颜色数据
   ThemeBean currentThemeBean = ThemeBean(
@@ -81,7 +81,7 @@ class GlobalModel extends ChangeNotifier {
   String currentNetPicUrl = "";
 
   ///是否进入登录页
-  bool goToLogin;
+  bool goToLogin = false;
 
   GlobalModel() {
     logic = GlobalLogic(this);

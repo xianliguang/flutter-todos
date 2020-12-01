@@ -32,7 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "aboutApp" : MessageLookupByLibrary.simpleMessage("关于"),
     "accountBackgroundSetting" : MessageLookupByLibrary.simpleMessage("背景设置"),
     "addTask" : MessageLookupByLibrary.simpleMessage("添加任务"),
-    "appName" : MessageLookupByLibrary.simpleMessage("一日清单"),
+    "appName" : MessageLookupByLibrary.simpleMessage("每日清单"),
     "appSetting" : MessageLookupByLibrary.simpleMessage("设置"),
     "autoDarkMode" : MessageLookupByLibrary.simpleMessage("自动夜间模式"),
     "avatar" : MessageLookupByLibrary.simpleMessage("头像"),

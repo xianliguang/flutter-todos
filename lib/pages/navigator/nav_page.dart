@@ -30,23 +30,23 @@ class NavPage extends StatelessWidget {
                 globalModel: globalModel,
               )
             : SizedBox(),
-        ListTile(
-          title: Text(IntlLocalizations.of(context).myAccount),
-          leading: Icon(Icons.account_circle),
-          trailing: Icon(Icons.keyboard_arrow_right),
-          onTap: () async {
-            final account = await SharedUtil.instance.getString(Keys.account);
-            if (account == "default" || account == null) {
-              Navigator.push(context, CupertinoPageRoute(builder: (ctx) {
-                return ProviderConfig.getInstance().getLoginPage();
-              }));
-            } else {
-              Navigator.push(context, CupertinoPageRoute(builder: (ctx) {
-                return ProviderConfig.getInstance().getAccountPage();
-              }));
-            }
-          },
-        ),
+//        ListTile(
+//          title: Text(IntlLocalizations.of(context).myAccount),
+//          leading: Icon(Icons.account_circle),
+//          trailing: Icon(Icons.keyboard_arrow_right),
+//          onTap: () async {
+//            final account = await SharedUtil.instance.getString(Keys.account);
+//            if (account == "default" || account == null) {
+//              Navigator.push(context, CupertinoPageRoute(builder: (ctx) {
+//                return ProviderConfig.getInstance().getLoginPage();
+//              }));
+//            } else {
+//              Navigator.push(context, CupertinoPageRoute(builder: (ctx) {
+//                return ProviderConfig.getInstance().getAccountPage();
+//              }));
+//            }
+//          },
+//        ),
         ListTile(
           title: Text(IntlLocalizations.of(context).doneList),
           leading: Icon(Icons.done_all),
@@ -57,16 +57,16 @@ class NavPage extends StatelessWidget {
             }));
           },
         ),
-        ListTile(
-          title: Text(IntlLocalizations.of(context).languageTitle),
-          leading: Icon(Icons.language),
-          trailing: Icon(Icons.keyboard_arrow_right),
-          onTap: () {
-            Navigator.push(context, CupertinoPageRoute(builder: (ctx) {
-              return LanguagePage();
-            }));
-          },
-        ),
+//        ListTile(
+//          title: Text(IntlLocalizations.of(context).languageTitle),
+//          leading: Icon(Icons.language),
+//          trailing: Icon(Icons.keyboard_arrow_right),
+//          onTap: () {
+//            Navigator.push(context, CupertinoPageRoute(builder: (ctx) {
+//              return LanguagePage();
+//            }));
+//          },
+//        ),
         ListTile(
           title: Text(IntlLocalizations.of(context).changeTheme),
           leading: Icon(Icons.color_lens),
@@ -77,16 +77,16 @@ class NavPage extends StatelessWidget {
             }));
           },
         ),
-        ListTile(
-          title: Text(IntlLocalizations.of(context).feedbackWall),
-          leading: Icon(Icons.subtitles),
-          trailing: Icon(Icons.keyboard_arrow_right),
-          onTap: () {
-            Navigator.push(context, CupertinoPageRoute(builder: (ctx) {
-              return ProviderConfig.getInstance().getFeedbackWallPage();
-            }));
-          },
-        ),
+//        ListTile(
+//          title: Text(IntlLocalizations.of(context).feedbackWall),
+//          leading: Icon(Icons.subtitles),
+//          trailing: Icon(Icons.keyboard_arrow_right),
+//          onTap: () {
+//            Navigator.push(context, CupertinoPageRoute(builder: (ctx) {
+//              return ProviderConfig.getInstance().getFeedbackWallPage();
+//            }));
+//          },
+//        ),
         ListTile(
           title: Text(IntlLocalizations.of(context).appSetting),
           leading: Icon(Icons.settings),
@@ -121,7 +121,7 @@ class NavPage extends StatelessWidget {
             tag: "tag_0",
             child: Container(
               height: netImageHeight,
-              child: CustomCacheImage(url: isDailyPic ? NavHeadType.DAILY_PIC_URL : url,cacheManager: isDailyPic ? CustomCacheManager():null,)
+              child: CustomCacheImage(url: isDailyPic ? NavHeadType.DAILY_PIC_URL : url,cacheManager: isDailyPic ? CustomCacheManager.instance:null,)
             )),
       );
     }

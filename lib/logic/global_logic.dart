@@ -208,7 +208,7 @@ class GlobalLogic{
     final date = DateTime.parse(time);
     if(date.difference(now).inHours > 12){
       SharedUtil.instance.saveString(Keys.everyDayPicRefreshTime, now.toIso8601String());
-      CustomCacheManager().removeFile(NavHeadType.DAILY_PIC_URL);
+      CustomCacheManager.instance.removeFile(NavHeadType.DAILY_PIC_URL);
     }
   }
 
